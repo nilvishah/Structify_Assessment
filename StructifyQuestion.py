@@ -1,17 +1,17 @@
 def intersectingChords(chordRadians, chordPoints):
     #dictionaries to store the indices of "s" and "e" labels in chordPoints
-    startPointsDict = {}
-    endPointsDict = {}
+    startPointDict = {}
+    endPointDict = {}
 
     for index, label in enumerate(chordPoints):
         if 's' in label:
-            startPointsDict[label] = index
+            startPointDict[label] = index
         elif 'e' in label:
-            endPointsDict[label] = index
+            endPointDict[label] = index
             
     # Sort the dictionaries based on keys
-    sortedStartPoints = sorted(startPointsDict.items())
-    sortedEndPoints = sorted(endPointsDict.items())
+    sortedStartPoints = sorted(startPointDict.items())
+    sortedEndPoints = sorted(endPointDict.items())
 
     # Create a new list 'sortedChords'
     sortedChords = [0] * len(chordRadians)
